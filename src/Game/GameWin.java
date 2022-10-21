@@ -74,6 +74,7 @@ public class GameWin extends JFrame
     @Override
     public void paint(Graphics g)
     {
+        //初始化对象
         if(offScreenImage==null)
         {
             offScreenImage=createImage(width,height);
@@ -81,6 +82,7 @@ public class GameWin extends JFrame
 
         //获取offScreenImage的画笔对象
         Graphics gImage=offScreenImage.getGraphics();
+        //用gImage填充画布
         gImage.fillRect(0,0,width,height);
 
         if(state==0)
@@ -91,12 +93,13 @@ public class GameWin extends JFrame
             gImage.setFont(new Font("仿宋",Font.BOLD,40));
             gImage.drawString("点击开始游戏", 180,300);
         }
-
+        //当游戏状态变更为1
         if(state==1)
         {
             bgObj.paintSelf(gImage);
             
         }
+        //把新图片一次性绘制到主窗口，解决游戏未开始时文字图片闪动问题
         g.drawImage(offScreenImage, 0,0,null);
     }
 }
