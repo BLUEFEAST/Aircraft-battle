@@ -25,10 +25,10 @@ public class GameWin extends JFrame {
     BgObj bgObj = new BgObj(GameUtils.bgImg, 0, -360, 3);
 
     //我方战斗机对象
-    public PlaneObj planeObj = new PlaneObj(GameUtils.planeImg, 290, 550, 128, 128, 0, this);
+    public PlaneObj planeObj = new PlaneObj(GameUtils.planeImg, 290, 550, 73, 58, 0, this);
 
     //敌方Boss对象
-    public BossObj bossObj = new BossObj(GameUtils.bossImg,250,35,128,128,5,this);
+    public BossObj bossObj = new BossObj(GameUtils.bossImg,250,35,61,44,5,this);
 
     //启动方法
     public void launch() {
@@ -113,12 +113,12 @@ public class GameWin extends JFrame {
     void createObj(){
         //我方子弹
         if(count % 15 == 0){  // 每调用15次paint方法才生成一颗子弹
-            GameUtils.shellObjList.add(new ShellObj(GameUtils.shellImg, planeObj.getX()+60, planeObj.getY()-30,9,21,5,this));
+            GameUtils.shellObjList.add(new ShellObj(GameUtils.shellImg, planeObj.getX()+60, planeObj.getY()-30,50,40,5,this));
             GameUtils.gameObjList.add(GameUtils.shellObjList.get(GameUtils.shellObjList.size()-1));
         }
 
         if(count % 15 == 0){
-            GameUtils.enemyObjList.add(new EnemyObj(GameUtils.enemyImg, (int)(Math.random()*12)*50, 0, 64, 64, 5,this));
+            GameUtils.enemyObjList.add(new EnemyObj(GameUtils.enemyImg, (int)(Math.random()*12)*50, 0, 36, 18, 5,this));
             GameUtils.gameObjList.add(GameUtils.enemyObjList.get(GameUtils.enemyObjList.size()-1));
         }
     }

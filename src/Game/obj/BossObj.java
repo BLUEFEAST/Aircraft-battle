@@ -16,7 +16,7 @@ public class BossObj extends GameObj{
     @Override
     public void paintSelf(Graphics gImage) {
         super.paintSelf(gImage);
-        if(x > 440 || x < -80){  //使敌方Boss到边界时会往相反方向走
+        if(x > 480 || x < -15){  //使敌方Boss到边界时会往相反方向走
             speed = -speed;
         }
         x += speed;
